@@ -27,7 +27,7 @@ export default function EmailForm() {
         var differenceInDays = Math.round((todayDate-recentWorkoutDate) / (1000 * 3500 * 24));
         if (differenceInDays == 7) {
             
-        } else if (differenceInDays < 7) {
+        } else if (differenceInDays < 7 && todayDate.getHours() == recentWorkoutDate.getHours()) {
 
         }
     }
