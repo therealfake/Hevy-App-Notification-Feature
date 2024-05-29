@@ -4,7 +4,7 @@ import apiResponse from './assets/api-response.json'
 export default function EmailForm() {
 
     const [email, setEmail] = useState(""); // TODO: replace with fetching actual email in fetchData
-    
+
     const fetchData = () => {
         // retrieve and return the most recent workout datetime
         const data = apiResponse; // TODO: replace with API request
@@ -16,8 +16,20 @@ export default function EmailForm() {
         // determine if it is the 7th day or not
         // if it is, send a final email explaining the notifications will stop
         // it it isn't, send reminder
-        console.log(mostRecentWorkout)
-        console.log(email);
+        const standardMsgs = [
+            "We Go Jim",
+            "It's Gym Time!",
+            "Ready to Workout Again?"
+        ]
+
+        var todayDate = new Date();
+        var recentWorkoutDate = new Date(mostRecentWorkout);
+        var differenceInDays = Math.round((todayDate-recentWorkoutDate) / (1000 * 3500 * 24));
+        if (differenceInDays == 7) {
+            
+        } else if (differenceInDays < 7) {
+
+        }
     }
 
     const handleEmail = (e) => { 
